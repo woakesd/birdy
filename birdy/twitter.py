@@ -114,7 +114,7 @@ class StreamResponse(BaseResponse):
         for item in self._stream_iter():
             if item:
                 try:
-                    data = json.loads(item.decode('utf-8'), object_hook=self._json_object_hook)
+                    data = json.loads(item.decode('utf-8')) #, object_hook=self._json_object_hook)
                 except:
                     pass
                 else:
